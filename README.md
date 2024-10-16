@@ -1,6 +1,10 @@
 # Algorithms
   The "Algorithms" repository is a versatile and thorough compilation of algorithm implementations, featuring code written in both Java and Python.  The repository offers a valuable resource for learning and applying fundamental algorithms essential to computer science and programming.
 
+## Usage
+You can use the code to understand the concepts better.
+
+
 ## Contributing
 Contributions to this repository are welcome! If you have a code sample or topic you'd like to contribute, please follow these steps:
 
