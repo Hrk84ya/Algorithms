@@ -1,0 +1,1869 @@
+[
+  {
+    "id": "bubble-sort",
+    "name": "Bubble Sort",
+    "category": "sorting",
+    "difficulty": "Beginner",
+    "description": "A simple comparison-based sorting algorithm that repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. The pass through the list is repeated until the list is sorted.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n²)",
+      "timeWorst": "O(n²)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start at the beginning of the array.",
+      "Compare adjacent elements. If the left element is greater than the right, swap them.",
+      "Move to the next pair and repeat the comparison.",
+      "After each full pass, the largest unsorted element is in its final position.",
+      "Repeat passes until no swaps are needed in a complete pass."
+    ],
+    "paths": {
+      "java": "Java/sorting/BubbleSort.java"
+    },
+    "exercises": [
+      {
+        "id": "bubble-sort-ex1",
+        "type": "predict-output",
+        "question": "After one full pass of Bubble Sort on [5, 3, 8, 1], what is the array state?",
+        "answer": "[3, 5, 1, 8]",
+        "hint": "In each pass, the largest element bubbles to the end by swapping adjacent pairs left to right."
+      },
+      {
+        "id": "bubble-sort-ex2",
+        "type": "multiple-choice",
+        "question": "What is the worst-case time complexity of Bubble Sort?",
+        "options": ["O(n)", "O(n log n)", "O(n²)", "O(2^n)"],
+        "answer": "O(n²)",
+        "hint": "In the worst case, every pair must be compared and swapped on every pass."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [64, 34, 25, 12, 22, 11, 90],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 64, 34, 25, 12", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "selection-sort",
+    "name": "Selection Sort",
+    "category": "sorting",
+    "difficulty": "Beginner",
+    "description": "A simple in-place sorting algorithm that divides the array into a sorted and unsorted region. It repeatedly selects the smallest element from the unsorted region and moves it to the end of the sorted region.",
+    "complexity": {
+      "timeBest": "O(n²)",
+      "timeAverage": "O(n²)",
+      "timeWorst": "O(n²)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start with the first element as the beginning of the unsorted region.",
+      "Find the minimum element in the unsorted region.",
+      "Swap it with the first element of the unsorted region.",
+      "Move the boundary of the sorted region one element to the right.",
+      "Repeat until the entire array is sorted."
+    ],
+    "paths": {
+      "java": "Java/sorting/SelectionSort.java",
+      "python": "Python/sorting/selection_sort.py"
+    },
+    "exercises": [
+      {
+        "id": "selection-sort-ex1",
+        "type": "predict-output",
+        "question": "After the first pass of Selection Sort on [29, 10, 14, 37, 13], what is the array state?",
+        "answer": "[10, 29, 14, 37, 13]",
+        "hint": "Selection Sort finds the minimum element and swaps it with the first unsorted position."
+      },
+      {
+        "id": "selection-sort-ex2",
+        "type": "multiple-choice",
+        "question": "How many swaps does Selection Sort perform in the worst case for an array of n elements?",
+        "options": ["O(1)", "O(n)", "O(n log n)", "O(n²)"],
+        "answer": "O(n)",
+        "hint": "Selection Sort performs at most one swap per pass, and there are n-1 passes."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [29, 10, 14, 37, 13],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 29, 10, 14, 37, 13", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "insertion-sort",
+    "name": "Insertion Sort",
+    "category": "sorting",
+    "difficulty": "Beginner",
+    "description": "A simple sorting algorithm that builds the final sorted array one element at a time. It picks each element and inserts it into its correct position among the previously sorted elements.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n²)",
+      "timeWorst": "O(n²)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start from the second element (index 1) as the key.",
+      "Compare the key with elements in the sorted portion (to its left).",
+      "Shift all sorted elements that are greater than the key one position to the right.",
+      "Insert the key into its correct position.",
+      "Move to the next element and repeat until the array is sorted."
+    ],
+    "paths": {
+      "java": "Java/sorting/InsertionSort.java",
+      "python": "Python/sorting/insertion_sort.py"
+    },
+    "exercises": [
+      {
+        "id": "insertion-sort-ex1",
+        "type": "predict-output",
+        "question": "After inserting the third element in Insertion Sort on [5, 2, 4, 6, 1], what is the array state?",
+        "answer": "[2, 4, 5, 6, 1]",
+        "hint": "After processing elements at indices 0, 1, and 2, the first three elements are sorted among themselves."
+      },
+      {
+        "id": "insertion-sort-ex2",
+        "type": "multiple-choice",
+        "question": "Insertion Sort is most efficient on which type of input?",
+        "options": ["Reverse sorted array", "Random array", "Nearly sorted array", "Array with all equal elements"],
+        "answer": "Nearly sorted array",
+        "hint": "When the array is nearly sorted, very few shifts are needed, approaching O(n) time."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [5, 2, 4, 6, 1, 3],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 5, 2, 4, 6, 1, 3", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "merge-sort",
+    "name": "Merge Sort",
+    "category": "sorting",
+    "difficulty": "Intermediate",
+    "description": "A divide-and-conquer sorting algorithm that splits the array in half, recursively sorts each half, and then merges the two sorted halves back together.",
+    "complexity": {
+      "timeBest": "O(n log n)",
+      "timeAverage": "O(n log n)",
+      "timeWorst": "O(n log n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "If the array has one or zero elements, it is already sorted. Return it.",
+      "Split the array into two halves.",
+      "Recursively sort the left half.",
+      "Recursively sort the right half.",
+      "Merge the two sorted halves by comparing elements from each and placing the smaller one first."
+    ],
+    "paths": {
+      "java": "Java/sorting/MergeSort.java",
+      "python": "Python/sorting/merge_sort.py"
+    },
+    "exercises": [
+      {
+        "id": "merge-sort-ex1",
+        "type": "predict-output",
+        "question": "When merging [1, 5, 8] and [2, 4, 9], what is the result?",
+        "answer": "[1, 2, 4, 5, 8, 9]",
+        "hint": "Compare the front elements of each half and take the smaller one each time."
+      },
+      {
+        "id": "merge-sort-ex2",
+        "type": "multiple-choice",
+        "question": "What is the space complexity of Merge Sort?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+        "answer": "O(n)",
+        "hint": "Merge Sort needs extra space to hold the merged result during the merge step."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [38, 27, 43, 3, 9, 82, 10],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 38, 27, 43, 3, 9", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "quick-sort",
+    "name": "Quick Sort",
+    "category": "sorting",
+    "difficulty": "Intermediate",
+    "description": "A divide-and-conquer sorting algorithm that selects a pivot element, partitions the array around the pivot so that smaller elements are on the left and larger on the right, then recursively sorts the partitions.",
+    "complexity": {
+      "timeBest": "O(n log n)",
+      "timeAverage": "O(n log n)",
+      "timeWorst": "O(n²)",
+      "space": "O(log n)"
+    },
+    "steps": [
+      "Choose a pivot element from the array.",
+      "Partition the array: move elements smaller than the pivot to the left and larger to the right.",
+      "The pivot is now in its final sorted position.",
+      "Recursively apply Quick Sort to the left partition.",
+      "Recursively apply Quick Sort to the right partition."
+    ],
+    "paths": {
+      "java": "Java/sorting/QuickSort.java",
+      "python": "Python/sorting/quick_sort.py"
+    },
+    "exercises": [
+      {
+        "id": "quick-sort-ex1",
+        "type": "predict-output",
+        "question": "Using the last element as pivot, after partitioning [10, 7, 8, 9, 1, 5], what is the pivot's final index?",
+        "answer": "1",
+        "hint": "The pivot is 5. All elements less than 5 go to its left, all greater go to its right. Only 1 is less than 5."
+      },
+      {
+        "id": "quick-sort-ex2",
+        "type": "multiple-choice",
+        "question": "What causes Quick Sort's worst-case O(n²) performance?",
+        "options": ["Random pivot selection", "Already sorted input with first/last pivot", "Large array size", "Duplicate elements"],
+        "answer": "Already sorted input with first/last pivot",
+        "hint": "When the pivot is always the smallest or largest element, partitions are maximally unbalanced."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [10, 7, 8, 9, 1, 5],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 10, 7, 8, 9, 1, 5", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "heap-sort",
+    "name": "Heap Sort",
+    "category": "sorting",
+    "difficulty": "Intermediate",
+    "description": "A comparison-based sorting algorithm that uses a binary heap data structure. It first builds a max-heap from the array, then repeatedly extracts the maximum element and places it at the end of the sorted portion.",
+    "complexity": {
+      "timeBest": "O(n log n)",
+      "timeAverage": "O(n log n)",
+      "timeWorst": "O(n log n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Build a max-heap from the input array.",
+      "The largest element is now at the root of the heap.",
+      "Swap the root with the last element of the heap and reduce the heap size by one.",
+      "Heapify the root to restore the max-heap property.",
+      "Repeat until the heap size is 1. The array is now sorted."
+    ],
+    "paths": {
+      "java": "Java/sorting/HeapSort.java",
+      "python": "Python/sorting/heap_sort.py"
+    },
+    "exercises": [
+      {
+        "id": "heap-sort-ex1",
+        "type": "multiple-choice",
+        "question": "What is the time complexity of building a max-heap from an unsorted array?",
+        "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+        "answer": "O(n)",
+        "hint": "Building a heap using the bottom-up approach (sift-down) is O(n), not O(n log n)."
+      },
+      {
+        "id": "heap-sort-ex2",
+        "type": "predict-output",
+        "question": "After building a max-heap from [4, 10, 3, 5, 1], what is the root element?",
+        "answer": "10",
+        "hint": "In a max-heap, the largest element is always at the root."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [4, 10, 3, 5, 1, 8, 7],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 4, 10, 3, 5, 1", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "radix-sort",
+    "name": "Radix Sort",
+    "category": "sorting",
+    "difficulty": "Intermediate",
+    "description": "A non-comparison sorting algorithm that sorts integers by processing individual digits. It processes digits from least significant to most significant, using a stable sort (like counting sort) at each digit position.",
+    "complexity": {
+      "timeBest": "O(nk)",
+      "timeAverage": "O(nk)",
+      "timeWorst": "O(nk)",
+      "space": "O(n + k)"
+    },
+    "steps": [
+      "Find the maximum number to determine the number of digits.",
+      "Starting from the least significant digit, sort all numbers based on that digit using a stable sort.",
+      "Move to the next more significant digit and repeat.",
+      "Continue until all digit positions have been processed.",
+      "The array is now fully sorted."
+    ],
+    "paths": {
+      "python": "Python/sorting/RadixSort.py"
+    },
+    "exercises": [
+      {
+        "id": "radix-sort-ex1",
+        "type": "multiple-choice",
+        "question": "What type of sort must be used at each digit position in Radix Sort?",
+        "options": ["Quick Sort", "Any comparison sort", "A stable sort", "Merge Sort"],
+        "answer": "A stable sort",
+        "hint": "Stability ensures that the relative order from previous digit sorts is preserved."
+      },
+      {
+        "id": "radix-sort-ex2",
+        "type": "predict-output",
+        "question": "After sorting by the ones digit, what is the order of [170, 45, 75, 90, 802, 24, 2, 66]?",
+        "answer": "[170, 90, 802, 2, 24, 45, 75, 66]",
+        "hint": "Group by the last digit: 0s first, then 2s, 4s, 5s, 6s."
+      }
+    ],
+    "visualization": {
+      "type": "sorting",
+      "defaultInput": [170, 45, 75, 90, 802, 24, 2, 66],
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 170, 45, 75, 90", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "breadth-first-search",
+    "name": "Breadth-First Search",
+    "category": "graph",
+    "difficulty": "Intermediate",
+    "description": "A graph traversal algorithm that explores all vertices at the present depth level before moving on to vertices at the next depth level. It uses a queue to keep track of the next vertex to visit.",
+    "complexity": {
+      "timeBest": "O(V + E)",
+      "timeAverage": "O(V + E)",
+      "timeWorst": "O(V + E)",
+      "space": "O(V)"
+    },
+    "steps": [
+      "Start at the source vertex and mark it as visited.",
+      "Add the source vertex to a queue.",
+      "While the queue is not empty, dequeue a vertex.",
+      "For each unvisited neighbor of the dequeued vertex, mark it as visited and enqueue it.",
+      "Repeat until the queue is empty. All reachable vertices have been visited."
+    ],
+    "paths": {
+      "java": "Java/graph/BreadthFirstSearch.java",
+      "python": "Python/graph/breadth_first_search.py"
+    },
+    "exercises": [
+      {
+        "id": "bfs-ex1",
+        "type": "predict-output",
+        "question": "Given a graph with edges 0-1, 0-2, 1-3, 2-3, what is the BFS traversal order starting from vertex 0?",
+        "answer": "0, 1, 2, 3",
+        "hint": "BFS visits all neighbors of the current vertex before moving deeper. Vertex 0's neighbors are 1 and 2."
+      },
+      {
+        "id": "bfs-ex2",
+        "type": "multiple-choice",
+        "question": "Which data structure does BFS use to track vertices to visit?",
+        "options": ["Stack", "Queue", "Priority Queue", "Linked List"],
+        "answer": "Queue",
+        "hint": "BFS processes vertices in first-in, first-out order."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "depth-first-search",
+    "name": "Depth-First Search",
+    "category": "graph",
+    "difficulty": "Intermediate",
+    "description": "A graph traversal algorithm that explores as far as possible along each branch before backtracking. It uses a stack (or recursion) to keep track of vertices to visit.",
+    "complexity": {
+      "timeBest": "O(V + E)",
+      "timeAverage": "O(V + E)",
+      "timeWorst": "O(V + E)",
+      "space": "O(V)"
+    },
+    "steps": [
+      "Start at the source vertex and mark it as visited.",
+      "Explore an unvisited neighbor of the current vertex.",
+      "Continue exploring deeper until a vertex with no unvisited neighbors is reached.",
+      "Backtrack to the previous vertex and explore other unvisited neighbors.",
+      "Repeat until all reachable vertices have been visited."
+    ],
+    "paths": {
+      "java": "Java/graph/DepthFirstSearch.java"
+    },
+    "exercises": [
+      {
+        "id": "dfs-ex1",
+        "type": "multiple-choice",
+        "question": "Which data structure does DFS implicitly use?",
+        "options": ["Queue", "Stack", "Priority Queue", "Hash Map"],
+        "answer": "Stack",
+        "hint": "DFS uses a stack either explicitly or via the call stack in recursion."
+      },
+      {
+        "id": "dfs-ex2",
+        "type": "predict-output",
+        "question": "In a DFS starting from vertex 0 on graph with edges 0-1, 0-2, 1-3, 2-4, visiting smaller neighbors first, what is the traversal order?",
+        "answer": "0, 1, 3, 2, 4",
+        "hint": "DFS goes deep first. From 0, visit 1, then from 1 visit 3, backtrack, then visit 2, then 4."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "dijkstra-algorithm",
+    "name": "Dijkstra's Algorithm",
+    "category": "graph",
+    "difficulty": "Intermediate",
+    "description": "A shortest-path algorithm for graphs with non-negative edge weights. It greedily selects the unvisited vertex with the smallest known distance and relaxes its neighbors.",
+    "complexity": {
+      "timeBest": "O((V + E) log V)",
+      "timeAverage": "O((V + E) log V)",
+      "timeWorst": "O((V + E) log V)",
+      "space": "O(V)"
+    },
+    "steps": [
+      "Initialize distances: set the source to 0 and all others to infinity.",
+      "Add all vertices to a priority queue ordered by distance.",
+      "Extract the vertex with the smallest distance.",
+      "For each neighbor, calculate the tentative distance through the current vertex. If smaller, update it.",
+      "Repeat until the priority queue is empty."
+    ],
+    "paths": {
+      "java": "Java/graph/DijkstraAlgorithm.java",
+      "python": "Python/graph/dijkstra_algorithm.py"
+    },
+    "exercises": [
+      {
+        "id": "dijkstra-ex1",
+        "type": "multiple-choice",
+        "question": "Dijkstra's algorithm does NOT work correctly with which type of edges?",
+        "options": ["Undirected edges", "Weighted edges", "Negative weight edges", "Self-loops"],
+        "answer": "Negative weight edges",
+        "hint": "Negative weights can cause Dijkstra to miss shorter paths discovered after a vertex is finalized."
+      },
+      {
+        "id": "dijkstra-ex2",
+        "type": "fill-blank",
+        "question": "In Dijkstra's algorithm, when we visit a neighbor, we update its distance if dist[current] + weight < dist[____].",
+        "answer": "neighbor",
+        "hint": "We compare the new path through the current vertex to the neighbor's existing best distance."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "bellman-ford",
+    "name": "Bellman-Ford Algorithm",
+    "category": "graph",
+    "difficulty": "Advanced",
+    "description": "A shortest-path algorithm that can handle graphs with negative edge weights. It relaxes all edges V-1 times and can detect negative weight cycles.",
+    "complexity": {
+      "timeBest": "O(V × E)",
+      "timeAverage": "O(V × E)",
+      "timeWorst": "O(V × E)",
+      "space": "O(V)"
+    },
+    "steps": [
+      "Initialize distances: set the source to 0 and all others to infinity.",
+      "Repeat V-1 times: for each edge (u, v) with weight w, if dist[u] + w < dist[v], update dist[v].",
+      "After V-1 iterations, all shortest paths are found (if no negative cycles).",
+      "Perform one more iteration over all edges to detect negative weight cycles.",
+      "If any distance is updated in the extra iteration, a negative cycle exists."
+    ],
+    "paths": {
+      "java": "Java/graph/BellmanFord.java",
+      "python": "Python/graph/bellman_ford.py"
+    },
+    "exercises": [
+      {
+        "id": "bellman-ford-ex1",
+        "type": "multiple-choice",
+        "question": "How many times does Bellman-Ford relax all edges to guarantee shortest paths?",
+        "options": ["V times", "V-1 times", "E times", "E-1 times"],
+        "answer": "V-1 times",
+        "hint": "The longest shortest path in a graph with V vertices has at most V-1 edges."
+      },
+      {
+        "id": "bellman-ford-ex2",
+        "type": "fill-blank",
+        "question": "Bellman-Ford can detect negative weight ____ in a graph.",
+        "answer": "cycles",
+        "hint": "If distances keep decreasing after V-1 iterations, there must be a cycle with negative total weight."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "floyd-warshall",
+    "name": "Floyd-Warshall Algorithm",
+    "category": "graph",
+    "difficulty": "Advanced",
+    "description": "An all-pairs shortest path algorithm that finds the shortest distances between every pair of vertices in a weighted graph. It works with both positive and negative edge weights (but no negative cycles).",
+    "complexity": {
+      "timeBest": "O(V³)",
+      "timeAverage": "O(V³)",
+      "timeWorst": "O(V³)",
+      "space": "O(V²)"
+    },
+    "steps": [
+      "Initialize a distance matrix with direct edge weights; set diagonal to 0 and missing edges to infinity.",
+      "For each intermediate vertex k, iterate over all pairs (i, j).",
+      "If dist[i][k] + dist[k][j] < dist[i][j], update dist[i][j].",
+      "After considering all intermediate vertices, the matrix contains all shortest paths.",
+      "Negative values on the diagonal indicate a negative weight cycle."
+    ],
+    "paths": {
+      "java": "Java/graph/FloydWarshall.java",
+      "python": "Python/graph/floyd_warshall.py"
+    },
+    "exercises": [
+      {
+        "id": "floyd-warshall-ex1",
+        "type": "multiple-choice",
+        "question": "What is the time complexity of the Floyd-Warshall algorithm?",
+        "options": ["O(V²)", "O(V² log V)", "O(V³)", "O(V × E)"],
+        "answer": "O(V³)",
+        "hint": "The algorithm uses three nested loops, each iterating over all V vertices."
+      },
+      {
+        "id": "floyd-warshall-ex2",
+        "type": "fill-blank",
+        "question": "Floyd-Warshall finds shortest paths between ____ pairs of vertices.",
+        "answer": "all",
+        "hint": "Unlike Dijkstra or Bellman-Ford which find paths from a single source, Floyd-Warshall computes all-pairs shortest paths."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-2, 1-3, 2-3", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "kruskal-algorithm",
+    "name": "Kruskal's Algorithm",
+    "category": "graph",
+    "difficulty": "Advanced",
+    "description": "A greedy algorithm that finds a minimum spanning tree for a connected weighted graph. It sorts all edges by weight and adds them one by one, skipping edges that would create a cycle, using a Union-Find structure.",
+    "complexity": {
+      "timeBest": "O(E log E)",
+      "timeAverage": "O(E log E)",
+      "timeWorst": "O(E log E)",
+      "space": "O(V + E)"
+    },
+    "steps": [
+      "Sort all edges in the graph by weight in ascending order.",
+      "Initialize a Union-Find structure with each vertex in its own set.",
+      "For each edge (in sorted order), check if its two vertices are in different sets.",
+      "If they are in different sets, add the edge to the MST and union the two sets.",
+      "If they are in the same set, skip the edge (it would create a cycle). Repeat until V-1 edges are added."
+    ],
+    "paths": {
+      "java": "Java/graph/KruskalAlgorithm.java",
+      "python": "Python/graph/kruskal_algorithm.py"
+    },
+    "exercises": [
+      {
+        "id": "kruskal-ex1",
+        "type": "multiple-choice",
+        "question": "What data structure does Kruskal's algorithm use to detect cycles?",
+        "options": ["Stack", "Queue", "Union-Find (Disjoint Set)", "Adjacency Matrix"],
+        "answer": "Union-Find (Disjoint Set)",
+        "hint": "Union-Find efficiently checks if two vertices are already connected and merges components."
+      },
+      {
+        "id": "kruskal-ex2",
+        "type": "fill-blank",
+        "question": "A minimum spanning tree of a graph with V vertices has exactly ____ edges.",
+        "answer": "V-1",
+        "hint": "A tree with V vertices always has exactly V-1 edges."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "prim-algorithm",
+    "name": "Prim's Algorithm",
+    "category": "graph",
+    "difficulty": "Advanced",
+    "description": "A greedy algorithm that finds a minimum spanning tree by starting from an arbitrary vertex and repeatedly adding the cheapest edge that connects a vertex in the tree to a vertex outside the tree.",
+    "complexity": {
+      "timeBest": "O((V + E) log V)",
+      "timeAverage": "O((V + E) log V)",
+      "timeWorst": "O((V + E) log V)",
+      "space": "O(V)"
+    },
+    "steps": [
+      "Start with an arbitrary vertex and add it to the MST set.",
+      "Find the minimum weight edge connecting a vertex in the MST to a vertex outside it.",
+      "Add that edge and the new vertex to the MST.",
+      "Update the key values of adjacent vertices if a cheaper connection is found.",
+      "Repeat until all vertices are included in the MST."
+    ],
+    "paths": {
+      "java": "Java/graph/PrimAlgorithm.java",
+      "python": "Python/graph/prim_algorithm.py"
+    },
+    "exercises": [
+      {
+        "id": "prim-ex1",
+        "type": "multiple-choice",
+        "question": "How does Prim's algorithm differ from Kruskal's?",
+        "options": ["Prim's uses BFS", "Prim's grows a single tree; Kruskal's merges forests", "Prim's is faster", "They produce different trees"],
+        "answer": "Prim's grows a single tree; Kruskal's merges forests",
+        "hint": "Prim's always expands from the existing tree, while Kruskal's picks globally cheapest edges and merges components."
+      },
+      {
+        "id": "prim-ex2",
+        "type": "fill-blank",
+        "question": "Prim's algorithm uses a ____ queue to efficiently find the minimum weight edge.",
+        "answer": "priority",
+        "hint": "A min-heap or priority queue allows extracting the minimum key vertex in O(log V) time."
+      }
+    ],
+    "visualization": {
+      "type": "graph",
+      "defaultInput": { "edges": "0-1, 0-2, 1-2, 1-3, 2-3, 3-4", "start": 0 },
+      "inputFormat": "edge list (e.g. 0-1, 1-2) and start vertex",
+      "inputFields": [
+        { "name": "edges", "label": "Edges", "placeholder": "e.g. 0-1, 0-2, 1-3", "validation": "edgeList" },
+        { "name": "start", "label": "Start vertex", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "binary-search",
+    "name": "Binary Search",
+    "category": "search",
+    "difficulty": "Beginner",
+    "description": "An efficient search algorithm that finds the position of a target value within a sorted array. It repeatedly divides the search interval in half, comparing the target to the middle element.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(log n)",
+      "timeWorst": "O(log n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start with the entire sorted array. Set low to 0 and high to the last index.",
+      "Find the middle index: mid = (low + high) / 2.",
+      "If the middle element equals the target, return mid.",
+      "If the target is less than the middle element, search the left half (high = mid - 1).",
+      "If the target is greater, search the right half (low = mid + 1). Repeat until found or low > high."
+    ],
+    "paths": {
+      "java": "Java/search/BinarySearch.java"
+    },
+    "exercises": [
+      {
+        "id": "binary-search-ex1",
+        "type": "predict-output",
+        "question": "How many comparisons does Binary Search need to find 7 in [1, 3, 5, 7, 9, 11, 13]?",
+        "answer": "1",
+        "hint": "The middle element of the array is 7, which is the target. Found on the first comparison."
+      },
+      {
+        "id": "binary-search-ex2",
+        "type": "multiple-choice",
+        "question": "What is a prerequisite for Binary Search to work correctly?",
+        "options": ["Array must be unsorted", "Array must be sorted", "Array must have unique elements", "Array must have even length"],
+        "answer": "Array must be sorted",
+        "hint": "Binary Search relies on the sorted order to eliminate half the remaining elements each step."
+      }
+    ],
+    "visualization": {
+      "type": "search",
+      "defaultInput": { "array": [2, 5, 8, 12, 16, 23, 38, 56, 72, 91], "target": 23 },
+      "inputFormat": "sorted comma-separated integers and a target value",
+      "inputFields": [
+        { "name": "array", "label": "Sorted array", "placeholder": "e.g. 2, 5, 8, 12, 16", "validation": "integerList" },
+        { "name": "target", "label": "Target", "placeholder": "e.g. 23", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "linear-search",
+    "name": "Linear Search",
+    "category": "search",
+    "difficulty": "Beginner",
+    "description": "The simplest search algorithm that checks every element in the array sequentially until the target is found or the end of the array is reached.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start from the first element of the array.",
+      "Compare the current element with the target value.",
+      "If they match, return the current index.",
+      "If they don't match, move to the next element.",
+      "If the end of the array is reached without finding the target, return -1 (not found)."
+    ],
+    "paths": {
+      "java": "Java/search/LinearSearch.java"
+    },
+    "exercises": [
+      {
+        "id": "linear-search-ex1",
+        "type": "predict-output",
+        "question": "How many comparisons does Linear Search need to find 4 in [7, 2, 4, 1, 9]?",
+        "answer": "3",
+        "hint": "Linear Search checks elements one by one: 7 (no), 2 (no), 4 (yes). Three comparisons."
+      },
+      {
+        "id": "linear-search-ex2",
+        "type": "multiple-choice",
+        "question": "What is the advantage of Linear Search over Binary Search?",
+        "options": ["It is faster", "It works on unsorted arrays", "It uses less memory", "It is recursive"],
+        "answer": "It works on unsorted arrays",
+        "hint": "Linear Search does not require the array to be sorted, unlike Binary Search."
+      }
+    ],
+    "visualization": {
+      "type": "search",
+      "defaultInput": { "array": [7, 2, 4, 1, 9, 3, 8, 5], "target": 3 },
+      "inputFormat": "comma-separated integers and a target value",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 7, 2, 4, 1, 9", "validation": "integerList" },
+        { "name": "target", "label": "Target", "placeholder": "e.g. 3", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "four-elements-sum",
+    "name": "Four Elements Sum",
+    "category": "search",
+    "difficulty": "Advanced",
+    "description": "Given an array and a target sum, find all unique quadruplets (four elements) that add up to the target. This is an extension of the classic two-sum and three-sum problems.",
+    "complexity": {
+      "timeBest": "O(n³)",
+      "timeAverage": "O(n³)",
+      "timeWorst": "O(n³)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Sort the array in ascending order.",
+      "Fix the first element using an outer loop (index i).",
+      "Fix the second element using a second loop (index j = i+1).",
+      "Use two pointers (left = j+1, right = end) to find pairs that complete the target sum.",
+      "Skip duplicate values to avoid duplicate quadruplets."
+    ],
+    "paths": {
+      "java": "Java/search/FourElementsSum.java"
+    },
+    "exercises": [
+      {
+        "id": "four-sum-ex1",
+        "type": "predict-output",
+        "question": "How many unique quadruplets in [1, 0, -1, 0, -2, 2] sum to 0?",
+        "answer": "3",
+        "hint": "The quadruplets are [-2,-1,1,2], [-2,0,0,2], and [-1,0,0,1]."
+      },
+      {
+        "id": "four-sum-ex2",
+        "type": "multiple-choice",
+        "question": "Why is the array sorted first in the four-sum approach?",
+        "options": ["To use binary search", "To enable the two-pointer technique", "To remove duplicates", "To reduce space complexity"],
+        "answer": "To enable the two-pointer technique",
+        "hint": "Sorting allows using two pointers that move inward, efficiently finding pairs that sum to a target."
+      }
+    ],
+    "visualization": {
+      "type": "search",
+      "defaultInput": { "array": [1, 0, -1, 0, -2, 2], "target": 0 },
+      "inputFormat": "comma-separated integers and a target value",
+      "inputFields": [
+        { "name": "array", "label": "Array", "placeholder": "e.g. 1, 0, -1, 0, -2, 2", "validation": "integerList" },
+        { "name": "target", "label": "Target sum", "placeholder": "e.g. 0", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "coin-change",
+    "name": "Coin Change",
+    "category": "dynamic_programming",
+    "difficulty": "Intermediate",
+    "description": "A classic dynamic programming problem that finds the minimum number of coins needed to make a given amount. It builds a table of optimal solutions for all amounts from 0 up to the target.",
+    "complexity": {
+      "timeBest": "O(amount × coins)",
+      "timeAverage": "O(amount × coins)",
+      "timeWorst": "O(amount × coins)",
+      "space": "O(amount)"
+    },
+    "steps": [
+      "Create a DP table of size amount + 1, initialized to infinity (except index 0 which is 0).",
+      "For each coin denomination, iterate through all amounts from the coin value to the target.",
+      "For each amount, check if using this coin gives a smaller count than the current best: dp[amount] = min(dp[amount], dp[amount - coin] + 1).",
+      "After processing all coins, dp[target] contains the minimum number of coins needed.",
+      "If dp[target] is still infinity, the amount cannot be made with the given coins."
+    ],
+    "paths": {
+      "java": "Java/dynamic_programming/CoinChange.java",
+      "python": "Python/dynamic_programming/coin_change.py"
+    },
+    "exercises": [
+      {
+        "id": "coin-change-ex1",
+        "type": "predict-output",
+        "question": "What is the minimum number of coins needed to make amount 11 using coins [1, 5, 6, 9]?",
+        "answer": "2",
+        "hint": "Try using the largest coins first: 5 + 6 = 11."
+      },
+      {
+        "id": "coin-change-ex2",
+        "type": "fill-blank",
+        "question": "In the coin change DP recurrence, dp[i] = min(dp[i], dp[i - ____] + 1) for each coin.",
+        "answer": "coin",
+        "hint": "We subtract the value of the current coin denomination from the amount."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 5, 10, 25], "amount": 36 },
+      "inputFormat": "coin denominations and target amount",
+      "inputFields": [
+        { "name": "coins", "label": "Coin denominations", "placeholder": "e.g. 1, 5, 10, 25", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Target amount", "placeholder": "e.g. 36", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "edit-distance",
+    "name": "Edit Distance",
+    "category": "dynamic_programming",
+    "difficulty": "Advanced",
+    "description": "Computes the minimum number of single-character edits (insertions, deletions, or substitutions) required to transform one string into another. Also known as the Levenshtein distance.",
+    "complexity": {
+      "timeBest": "O(m × n)",
+      "timeAverage": "O(m × n)",
+      "timeWorst": "O(m × n)",
+      "space": "O(m × n)"
+    },
+    "steps": [
+      "Create a (m+1) × (n+1) DP table where m and n are the lengths of the two strings.",
+      "Initialize the first row and column with values 0 to m and 0 to n (base cases for empty string transformations).",
+      "For each cell (i, j), if characters match, dp[i][j] = dp[i-1][j-1] (no edit needed).",
+      "If characters differ, dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1]) representing delete, insert, or replace.",
+      "The value at dp[m][n] is the minimum edit distance."
+    ],
+    "paths": {
+      "java": "Java/dynamic_programming/EditDistance.java",
+      "python": "Python/dynamic_programming/edit_distance.py"
+    },
+    "exercises": [
+      {
+        "id": "edit-distance-ex1",
+        "type": "predict-output",
+        "question": "What is the edit distance between 'kitten' and 'sitting'?",
+        "answer": "3",
+        "hint": "kitten → sitten (substitute k→s) → sittin (substitute e→i) → sitting (insert g)."
+      },
+      {
+        "id": "edit-distance-ex2",
+        "type": "multiple-choice",
+        "question": "Which operations are allowed in the standard edit distance problem?",
+        "options": ["Insert and delete only", "Insert, delete, and substitute", "Substitute only", "Insert, delete, substitute, and swap"],
+        "answer": "Insert, delete, and substitute",
+        "hint": "The classic Levenshtein distance allows three operations: insert, delete, and substitute a single character."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "str1": "kitten", "str2": "sitting" },
+      "inputFormat": "two strings separated by a comma",
+      "inputFields": [
+        { "name": "str1", "label": "String 1", "placeholder": "e.g. kitten", "validation": "stringPair" },
+        { "name": "str2", "label": "String 2", "placeholder": "e.g. sitting", "validation": "stringPair" }
+      ]
+    }
+  },
+  {
+    "id": "knapsack-problem",
+    "name": "0/1 Knapsack Problem",
+    "category": "dynamic_programming",
+    "difficulty": "Intermediate",
+    "description": "Given a set of items with weights and values, determine the maximum value that can be carried in a knapsack of limited capacity. Each item can either be included or excluded (0/1 choice).",
+    "complexity": {
+      "timeBest": "O(n × W)",
+      "timeAverage": "O(n × W)",
+      "timeWorst": "O(n × W)",
+      "space": "O(n × W)"
+    },
+    "steps": [
+      "Create a DP table of size (n+1) × (W+1) where n is the number of items and W is the capacity.",
+      "Initialize the first row and column to 0 (no items or zero capacity means zero value).",
+      "For each item i and capacity w, if the item's weight exceeds w, dp[i][w] = dp[i-1][w] (skip item).",
+      "Otherwise, dp[i][w] = max(dp[i-1][w], dp[i-1][w - weight[i]] + value[i]).",
+      "The value at dp[n][W] is the maximum achievable value."
+    ],
+    "paths": {
+      "java": "Java/dynamic_programming/KnapsackProblem.java",
+      "python": "Python/dynamic_programming/knapsack_problem.py"
+    },
+    "exercises": [
+      {
+        "id": "knapsack-ex1",
+        "type": "predict-output",
+        "question": "Items: weights=[1,3,4,5], values=[1,4,5,7], capacity=7. What is the maximum value?",
+        "answer": "9",
+        "hint": "Select items with weights 3 and 4 (total weight 7) for values 4 + 5 = 9."
+      },
+      {
+        "id": "knapsack-ex2",
+        "type": "multiple-choice",
+        "question": "What makes the 0/1 Knapsack different from the Fractional Knapsack?",
+        "options": ["Items have no weight", "Items can be split into fractions", "Each item must be fully taken or left", "There is no capacity limit"],
+        "answer": "Each item must be fully taken or left",
+        "hint": "In 0/1 Knapsack, you cannot take a fraction of an item; it is all or nothing."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 3, 4, 5], "amount": 7 },
+      "inputFormat": "item weights and knapsack capacity",
+      "inputFields": [
+        { "name": "coins", "label": "Item weights", "placeholder": "e.g. 1, 3, 4, 5", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Capacity", "placeholder": "e.g. 7", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "longest-common-subsequence",
+    "name": "Longest Common Subsequence",
+    "category": "dynamic_programming",
+    "difficulty": "Intermediate",
+    "description": "Finds the longest subsequence common to two sequences. A subsequence is a sequence that appears in the same relative order but not necessarily contiguously.",
+    "complexity": {
+      "timeBest": "O(m × n)",
+      "timeAverage": "O(m × n)",
+      "timeWorst": "O(m × n)",
+      "space": "O(m × n)"
+    },
+    "steps": [
+      "Create a (m+1) × (n+1) DP table initialized to 0.",
+      "For each pair of characters (i, j) from the two strings:",
+      "If characters match, dp[i][j] = dp[i-1][j-1] + 1.",
+      "If they don't match, dp[i][j] = max(dp[i-1][j], dp[i][j-1]).",
+      "The value at dp[m][n] is the length of the LCS. Backtrack through the table to reconstruct the subsequence."
+    ],
+    "paths": {
+      "java": "Java/dynamic_programming/LongestCommonSubsequence.java",
+      "python": "Python/dynamic_programming/longest_common_subsequence.py"
+    },
+    "exercises": [
+      {
+        "id": "lcs-ex1",
+        "type": "predict-output",
+        "question": "What is the length of the LCS of 'ABCBDAB' and 'BDCAB'?",
+        "answer": "4",
+        "hint": "One LCS is 'BCAB' with length 4."
+      },
+      {
+        "id": "lcs-ex2",
+        "type": "fill-blank",
+        "question": "When characters match in LCS, dp[i][j] = dp[i-1][j-1] + ____.",
+        "answer": "1",
+        "hint": "A matching character extends the LCS by exactly one."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "str1": "ABCBDAB", "str2": "BDCAB" },
+      "inputFormat": "two strings separated by a comma",
+      "inputFields": [
+        { "name": "str1", "label": "String 1", "placeholder": "e.g. ABCBDAB", "validation": "stringPair" },
+        { "name": "str2", "label": "String 2", "placeholder": "e.g. BDCAB", "validation": "stringPair" }
+      ]
+    }
+  },
+  {
+    "id": "maximum-subarray",
+    "name": "Maximum Subarray (Kadane's Algorithm)",
+    "category": "dynamic_programming",
+    "difficulty": "Beginner",
+    "description": "Finds the contiguous subarray within a one-dimensional array of numbers that has the largest sum. Kadane's algorithm solves this in linear time by maintaining a running maximum.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Initialize currentMax and globalMax to the first element.",
+      "For each subsequent element, currentMax = max(element, currentMax + element).",
+      "If currentMax > globalMax, update globalMax.",
+      "This decides at each position whether to extend the existing subarray or start a new one.",
+      "After processing all elements, globalMax is the maximum subarray sum."
+    ],
+    "paths": {
+      "java": "Java/dynamic_programming/MaximumSubarray.java",
+      "python": "Python/dynamic_programming/maximum_subarray.py"
+    },
+    "exercises": [
+      {
+        "id": "max-subarray-ex1",
+        "type": "predict-output",
+        "question": "What is the maximum subarray sum of [-2, 1, -3, 4, -1, 2, 1, -5, 4]?",
+        "answer": "6",
+        "hint": "The subarray [4, -1, 2, 1] has the maximum sum of 6."
+      },
+      {
+        "id": "max-subarray-ex2",
+        "type": "multiple-choice",
+        "question": "What is the time complexity of Kadane's algorithm?",
+        "options": ["O(n²)", "O(n log n)", "O(n)", "O(1)"],
+        "answer": "O(n)",
+        "hint": "Kadane's algorithm makes a single pass through the array."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [-2, 1, -3, 4, -1, 2, 1, -5, 4], "amount": 9 },
+      "inputFormat": "comma-separated integers",
+      "inputFields": [
+        { "name": "coins", "label": "Array", "placeholder": "e.g. -2, 1, -3, 4, -1, 2, 1", "validation": "integerList" },
+        { "name": "amount", "label": "Array size", "placeholder": "e.g. 9", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "hash-table",
+    "name": "Hash Table",
+    "category": "data_structures",
+    "difficulty": "Intermediate",
+    "description": "A data structure that maps keys to values using a hash function. It provides average O(1) time for insertions, deletions, and lookups by computing an index from the key.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(1)",
+      "timeWorst": "O(n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Compute the hash of the key using a hash function.",
+      "Map the hash to an index in the underlying array (e.g., hash % tableSize).",
+      "If the slot is empty, insert the key-value pair.",
+      "If a collision occurs (slot occupied), resolve it using chaining (linked list) or open addressing.",
+      "For lookups, compute the hash, go to the index, and search for the key in case of collisions."
+    ],
+    "paths": {
+      "java": "Java/data_structures/HashTable.java",
+      "python": "Python/data_structures/hash_table.py"
+    },
+    "exercises": [
+      {
+        "id": "hash-table-ex1",
+        "type": "multiple-choice",
+        "question": "What is the average time complexity of a hash table lookup?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+        "answer": "O(1)",
+        "hint": "With a good hash function and low load factor, lookups are constant time on average."
+      },
+      {
+        "id": "hash-table-ex2",
+        "type": "fill-blank",
+        "question": "When two different keys hash to the same index, it is called a ____.",
+        "answer": "collision",
+        "hint": "This situation requires a resolution strategy like chaining or open addressing."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [10, 22, 31, 4, 15, 28, 17],
+      "inputFormat": "comma-separated integers to insert",
+      "inputFields": [
+        { "name": "array", "label": "Keys to insert", "placeholder": "e.g. 10, 22, 31, 4, 15", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "union-find",
+    "name": "Union-Find (Disjoint Set)",
+    "category": "data_structures",
+    "difficulty": "Intermediate",
+    "description": "A data structure that tracks a set of elements partitioned into disjoint subsets. It supports two operations: find (determine which set an element belongs to) and union (merge two sets).",
+    "complexity": {
+      "timeBest": "O(α(n))",
+      "timeAverage": "O(α(n))",
+      "timeWorst": "O(α(n))",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Initialize each element as its own parent (each element is its own set).",
+      "Find: follow parent pointers until reaching the root (element whose parent is itself).",
+      "Apply path compression during find: make every node on the path point directly to the root.",
+      "Union: find the roots of both elements. Attach the smaller tree under the root of the larger tree (union by rank).",
+      "Path compression and union by rank together give nearly constant amortized time per operation."
+    ],
+    "paths": {
+      "java": "Java/data_structures/UnionFind.java",
+      "python": "Python/data_structures/union_find.py"
+    },
+    "exercises": [
+      {
+        "id": "union-find-ex1",
+        "type": "multiple-choice",
+        "question": "What optimization makes Union-Find nearly O(1) per operation?",
+        "options": ["Binary search", "Path compression and union by rank", "Hash tables", "Balanced BST"],
+        "answer": "Path compression and union by rank",
+        "hint": "Path compression flattens the tree during find, and union by rank keeps trees balanced."
+      },
+      {
+        "id": "union-find-ex2",
+        "type": "fill-blank",
+        "question": "In Union-Find, α(n) is the inverse ____ function, which grows extremely slowly.",
+        "answer": "Ackermann",
+        "hint": "The inverse Ackermann function is effectively constant for all practical input sizes."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [0, 1, 2, 3, 4, 5, 6],
+      "inputFormat": "comma-separated integers (element IDs)",
+      "inputFields": [
+        { "name": "array", "label": "Elements", "placeholder": "e.g. 0, 1, 2, 3, 4, 5", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "binary-to-decimal",
+    "name": "Binary to Decimal Conversion",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Converts a binary number (base 2) to its decimal (base 10) equivalent by multiplying each bit by its positional power of 2 and summing the results.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start from the rightmost bit (least significant bit).",
+      "Multiply each bit by 2 raised to its position (0-indexed from right).",
+      "Sum all the products.",
+      "The result is the decimal equivalent.",
+      "Example: 1011 = 1×2³ + 0×2² + 1×2¹ + 1×2⁰ = 8 + 0 + 2 + 1 = 11."
+    ],
+    "paths": {
+      "java": "Java/mathematical/BinaryToDecimal.java"
+    },
+    "exercises": [
+      {
+        "id": "bin-to-dec-ex1",
+        "type": "predict-output",
+        "question": "What is the decimal value of binary 11010?",
+        "answer": "26",
+        "hint": "1×16 + 1×8 + 0×4 + 1×2 + 0×1 = 26."
+      },
+      {
+        "id": "bin-to-dec-ex2",
+        "type": "fill-blank",
+        "question": "Each bit position in binary represents a power of ____.",
+        "answer": "2",
+        "hint": "Binary is base 2, so each position represents 2⁰, 2¹, 2², etc."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 1, 0, 1, 0], "amount": 5 },
+      "inputFormat": "binary digits",
+      "inputFields": [
+        { "name": "coins", "label": "Binary digits", "placeholder": "e.g. 1, 1, 0, 1, 0", "validation": "integerList" },
+        { "name": "amount", "label": "Number of digits", "placeholder": "e.g. 5", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "binary-to-hexadecimal",
+    "name": "Binary to Hexadecimal Conversion",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Converts a binary number to hexadecimal by grouping binary digits into sets of four (from right to left) and converting each group to its hex equivalent.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Pad the binary number with leading zeros so its length is a multiple of 4.",
+      "Group the binary digits into sets of 4 from right to left.",
+      "Convert each 4-bit group to its hexadecimal digit (0-9, A-F).",
+      "Concatenate the hex digits to form the result.",
+      "Example: 11010110 → 1101 0110 → D6."
+    ],
+    "paths": {
+      "java": "Java/mathematical/BinaryToHexaDecimal.java"
+    },
+    "exercises": [
+      {
+        "id": "bin-to-hex-ex1",
+        "type": "predict-output",
+        "question": "What is the hexadecimal value of binary 10101100?",
+        "answer": "AC",
+        "hint": "Split into groups of 4: 1010 = A, 1100 = C. Result: AC."
+      },
+      {
+        "id": "bin-to-hex-ex2",
+        "type": "multiple-choice",
+        "question": "How many binary digits does each hexadecimal digit represent?",
+        "options": ["2", "3", "4", "8"],
+        "answer": "4",
+        "hint": "Hexadecimal is base 16 = 2⁴, so each hex digit maps to exactly 4 binary digits."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 0, 1, 0, 1, 1, 0, 0], "amount": 8 },
+      "inputFormat": "binary digits",
+      "inputFields": [
+        { "name": "coins", "label": "Binary digits", "placeholder": "e.g. 1, 0, 1, 0, 1, 1, 0, 0", "validation": "integerList" },
+        { "name": "amount", "label": "Number of digits", "placeholder": "e.g. 8", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "euclidean-algorithm",
+    "name": "Euclidean Algorithm (GCD)",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "An efficient method for computing the greatest common divisor (GCD) of two integers. It repeatedly replaces the larger number with the remainder of dividing the larger by the smaller.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(log(min(a,b)))",
+      "timeWorst": "O(log(min(a,b)))",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Given two numbers a and b where a >= b.",
+      "Compute the remainder: r = a mod b.",
+      "Replace a with b and b with r.",
+      "Repeat until b becomes 0.",
+      "When b is 0, a is the GCD."
+    ],
+    "paths": {
+      "java": "Java/mathematical/EuclideanAlgorithm.java"
+    },
+    "exercises": [
+      {
+        "id": "euclidean-ex1",
+        "type": "predict-output",
+        "question": "What is the GCD of 48 and 18 using the Euclidean algorithm?",
+        "answer": "6",
+        "hint": "48 mod 18 = 12, 18 mod 12 = 6, 12 mod 6 = 0. GCD is 6."
+      },
+      {
+        "id": "euclidean-ex2",
+        "type": "fill-blank",
+        "question": "The Euclidean algorithm finds the greatest common ____ of two numbers.",
+        "answer": "divisor",
+        "hint": "GCD stands for Greatest Common Divisor."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [48, 18], "amount": 2 },
+      "inputFormat": "two positive integers",
+      "inputFields": [
+        { "name": "coins", "label": "Numbers", "placeholder": "e.g. 48, 18", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Count", "placeholder": "e.g. 2", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "factorial",
+    "name": "Factorial",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Computes the factorial of a non-negative integer n, which is the product of all positive integers less than or equal to n. Factorial is denoted as n! and is fundamental in combinatorics and probability.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Base case: 0! = 1 and 1! = 1.",
+      "For n > 1, multiply n by (n-1)!.",
+      "This can be computed iteratively: result = 1, then multiply by 2, 3, ..., n.",
+      "Or recursively: factorial(n) = n × factorial(n-1).",
+      "Example: 5! = 5 × 4 × 3 × 2 × 1 = 120."
+    ],
+    "paths": {
+      "java": "Java/mathematical/Factorial.java"
+    },
+    "exercises": [
+      {
+        "id": "factorial-ex1",
+        "type": "predict-output",
+        "question": "What is 7! (7 factorial)?",
+        "answer": "5040",
+        "hint": "7! = 7 × 6 × 5 × 4 × 3 × 2 × 1 = 5040."
+      },
+      {
+        "id": "factorial-ex2",
+        "type": "multiple-choice",
+        "question": "What is 0! (zero factorial)?",
+        "options": ["0", "1", "Undefined", "-1"],
+        "answer": "1",
+        "hint": "By convention, 0! is defined as 1. This is the base case for the factorial function."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 2, 3, 4, 5, 6, 7], "amount": 7 },
+      "inputFormat": "a positive integer",
+      "inputFields": [
+        { "name": "coins", "label": "Sequence", "placeholder": "e.g. 1, 2, 3, 4, 5", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "n", "placeholder": "e.g. 7", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "fast-exponentiation",
+    "name": "Fast Exponentiation",
+    "category": "mathematical",
+    "difficulty": "Intermediate",
+    "description": "Computes base^exponent efficiently using the method of exponentiation by squaring. Instead of multiplying base by itself exponent times, it reduces the number of multiplications to O(log n).",
+    "complexity": {
+      "timeBest": "O(log n)",
+      "timeAverage": "O(log n)",
+      "timeWorst": "O(log n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "If the exponent is 0, return 1.",
+      "If the exponent is even, compute half = power(base, exp/2), then return half × half.",
+      "If the exponent is odd, return base × power(base, exp-1).",
+      "This halves the exponent at each step, giving logarithmic time.",
+      "Example: 2^10 = (2^5)^2 = (2 × (2^2)^2)^2."
+    ],
+    "paths": {
+      "java": "Java/mathematical/FastExponentiation.java",
+      "python": "Python/mathematical/fast_exponentiation.py"
+    },
+    "exercises": [
+      {
+        "id": "fast-exp-ex1",
+        "type": "predict-output",
+        "question": "How many multiplications does fast exponentiation need to compute 2^16?",
+        "answer": "4",
+        "hint": "2^16 = (2^8)^2 = ((2^4)^2)^2 = (((2^2)^2)^2)^2. Four squarings."
+      },
+      {
+        "id": "fast-exp-ex2",
+        "type": "multiple-choice",
+        "question": "What is the key idea behind fast exponentiation?",
+        "options": ["Addition chains", "Squaring the base and halving the exponent", "Using logarithms", "Matrix multiplication"],
+        "answer": "Squaring the base and halving the exponent",
+        "hint": "By squaring the result and halving the exponent, we reduce O(n) multiplications to O(log n)."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [2, 16], "amount": 2 },
+      "inputFormat": "base and exponent",
+      "inputFields": [
+        { "name": "coins", "label": "Base and exponent", "placeholder": "e.g. 2, 16", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Count", "placeholder": "e.g. 2", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "integer-to-roman",
+    "name": "Integer to Roman Numeral",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Converts an integer to its Roman numeral representation. Uses a greedy approach, repeatedly subtracting the largest possible Roman numeral value and appending the corresponding symbol.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(1)",
+      "timeWorst": "O(1)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Define value-symbol pairs in descending order: 1000=M, 900=CM, 500=D, 400=CD, 100=C, 90=XC, 50=L, 40=XL, 10=X, 9=IX, 5=V, 4=IV, 1=I.",
+      "Start with the largest value.",
+      "While the number is >= the current value, subtract it and append the symbol.",
+      "Move to the next smaller value and repeat.",
+      "Example: 1994 → M(1000) + CM(900) + XC(90) + IV(4) = MCMXCIV."
+    ],
+    "paths": {
+      "java": "Java/mathematical/IntegerToRoman.java"
+    },
+    "exercises": [
+      {
+        "id": "int-to-roman-ex1",
+        "type": "predict-output",
+        "question": "What is 58 in Roman numerals?",
+        "answer": "LVIII",
+        "hint": "50 = L, 8 = VIII. So 58 = LVIII."
+      },
+      {
+        "id": "int-to-roman-ex2",
+        "type": "fill-blank",
+        "question": "The Roman numeral for 900 is ____.",
+        "answer": "CM",
+        "hint": "900 is 1000 - 100, represented by placing C before M."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1], "amount": 1994 },
+      "inputFormat": "an integer to convert",
+      "inputFields": [
+        { "name": "coins", "label": "Roman values", "placeholder": "e.g. 1000, 900, 500, 400", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Number", "placeholder": "e.g. 1994", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "pascal-triangle",
+    "name": "Pascal's Triangle",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Generates Pascal's Triangle where each number is the sum of the two numbers directly above it. Row n contains the binomial coefficients C(n, k) for k = 0 to n.",
+    "complexity": {
+      "timeBest": "O(n²)",
+      "timeAverage": "O(n²)",
+      "timeWorst": "O(n²)",
+      "space": "O(n²)"
+    },
+    "steps": [
+      "Start with row 0 containing just [1].",
+      "For each subsequent row, start and end with 1.",
+      "Each interior element is the sum of the two elements above it from the previous row.",
+      "Row n has n+1 elements.",
+      "Example: Row 4 = [1, 4, 6, 4, 1]."
+    ],
+    "paths": {
+      "java": "Java/mathematical/pascalTriangle.java"
+    },
+    "exercises": [
+      {
+        "id": "pascal-ex1",
+        "type": "predict-output",
+        "question": "What is row 5 of Pascal's Triangle?",
+        "answer": "[1, 5, 10, 10, 5, 1]",
+        "hint": "Each element is the sum of the two elements above it. Row 4 is [1, 4, 6, 4, 1]."
+      },
+      {
+        "id": "pascal-ex2",
+        "type": "multiple-choice",
+        "question": "What does element C(n, k) in Pascal's Triangle represent?",
+        "options": ["n × k", "n! / k!", "n! / (k! × (n-k)!)", "n^k"],
+        "answer": "n! / (k! × (n-k)!)",
+        "hint": "Each entry is a binomial coefficient, representing the number of ways to choose k items from n."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [1, 1, 1, 1, 1], "amount": 5 },
+      "inputFormat": "number of rows",
+      "inputFields": [
+        { "name": "coins", "label": "Initial row", "placeholder": "e.g. 1, 1, 1, 1, 1", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Rows", "placeholder": "e.g. 5", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "sieve-of-eratosthenes",
+    "name": "Sieve of Eratosthenes",
+    "category": "mathematical",
+    "difficulty": "Intermediate",
+    "description": "An ancient algorithm for finding all prime numbers up to a given limit. It iteratively marks the multiples of each prime starting from 2, leaving only prime numbers unmarked.",
+    "complexity": {
+      "timeBest": "O(n log log n)",
+      "timeAverage": "O(n log log n)",
+      "timeWorst": "O(n log log n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Create a boolean array of size n+1, initialized to true (all numbers assumed prime).",
+      "Start with the first prime number, 2.",
+      "Mark all multiples of 2 (4, 6, 8, ...) as not prime.",
+      "Move to the next unmarked number (3) and mark all its multiples.",
+      "Continue until you have processed all numbers up to √n. Remaining unmarked numbers are prime."
+    ],
+    "paths": {
+      "java": "Java/mathematical/SieveOfEratosthenes.java",
+      "python": "Python/mathematical/sieve_of_eratosthenes.py"
+    },
+    "exercises": [
+      {
+        "id": "sieve-ex1",
+        "type": "predict-output",
+        "question": "How many primes are there up to 20?",
+        "answer": "8",
+        "hint": "The primes up to 20 are: 2, 3, 5, 7, 11, 13, 17, 19."
+      },
+      {
+        "id": "sieve-ex2",
+        "type": "multiple-choice",
+        "question": "In the Sieve of Eratosthenes, you only need to check multiples up to what value?",
+        "options": ["n", "n/2", "√n", "log n"],
+        "answer": "√n",
+        "hint": "Any composite number n has a factor ≤ √n, so checking up to √n is sufficient."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [2, 3, 5, 7, 11, 13, 17, 19], "amount": 20 },
+      "inputFormat": "upper limit for prime search",
+      "inputFields": [
+        { "name": "coins", "label": "Known primes", "placeholder": "e.g. 2, 3, 5, 7", "validation": "positiveIntegerList" },
+        { "name": "amount", "label": "Upper limit", "placeholder": "e.g. 20", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "fibonacci",
+    "name": "Fibonacci Sequence",
+    "category": "mathematical",
+    "difficulty": "Beginner",
+    "description": "Generates the Fibonacci sequence where each number is the sum of the two preceding ones. The sequence starts with 0 and 1, and is fundamental in mathematics and computer science.",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(1)"
+    },
+    "steps": [
+      "Start with F(0) = 0 and F(1) = 1.",
+      "For each subsequent number, F(n) = F(n-1) + F(n-2).",
+      "Use iteration (or memoization) to avoid exponential recursive calls.",
+      "Keep track of only the last two values to achieve O(1) space.",
+      "Example: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, ..."
+    ],
+    "paths": {
+      "python": "Python/mathematical/Fibonacci.py"
+    },
+    "exercises": [
+      {
+        "id": "fibonacci-ex1",
+        "type": "predict-output",
+        "question": "What is the 10th Fibonacci number (starting from F(0) = 0)?",
+        "answer": "55",
+        "hint": "F(0)=0, F(1)=1, F(2)=1, F(3)=2, F(4)=3, F(5)=5, F(6)=8, F(7)=13, F(8)=21, F(9)=34, F(10)=55."
+      },
+      {
+        "id": "fibonacci-ex2",
+        "type": "fill-blank",
+        "question": "The Fibonacci recurrence is F(n) = F(n-1) + F(n-____).",
+        "answer": "2",
+        "hint": "Each Fibonacci number is the sum of the two preceding numbers."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "coins": [0, 1, 1, 2, 3, 5, 8, 13], "amount": 8 },
+      "inputFormat": "number of terms",
+      "inputFields": [
+        { "name": "coins", "label": "Sequence", "placeholder": "e.g. 0, 1, 1, 2, 3, 5", "validation": "integerList" },
+        { "name": "amount", "label": "Terms", "placeholder": "e.g. 8", "validation": "positiveInteger" }
+      ]
+    }
+  },
+  {
+    "id": "kmp-algorithm",
+    "name": "KMP (Knuth-Morris-Pratt) Algorithm",
+    "category": "string",
+    "difficulty": "Advanced",
+    "description": "An efficient string matching algorithm that searches for occurrences of a pattern within a text. It preprocesses the pattern to build a failure function (partial match table) that allows skipping characters on mismatch.",
+    "complexity": {
+      "timeBest": "O(n + m)",
+      "timeAverage": "O(n + m)",
+      "timeWorst": "O(n + m)",
+      "space": "O(m)"
+    },
+    "steps": [
+      "Preprocess the pattern to build the failure function (longest proper prefix which is also a suffix).",
+      "Initialize two pointers: i for the text and j for the pattern.",
+      "If text[i] matches pattern[j], advance both pointers.",
+      "On mismatch, use the failure function to shift the pattern: j = failure[j-1].",
+      "If j reaches the pattern length, a match is found. Record it and continue searching."
+    ],
+    "paths": {
+      "java": "Java/string/KMPAlgorithm.java",
+      "python": "Python/string/kmp_algorithm.py"
+    },
+    "exercises": [
+      {
+        "id": "kmp-ex1",
+        "type": "predict-output",
+        "question": "What is the failure function for pattern 'ABABC'?",
+        "answer": "[0, 0, 1, 2, 0]",
+        "hint": "For each position, find the longest proper prefix that is also a suffix. A=0, AB=0, ABA=1, ABAB=2, ABABC=0."
+      },
+      {
+        "id": "kmp-ex2",
+        "type": "multiple-choice",
+        "question": "What is the main advantage of KMP over naive string matching?",
+        "options": ["Uses less memory", "Never re-examines characters in the text", "Works on binary strings only", "Is simpler to implement"],
+        "answer": "Never re-examines characters in the text",
+        "hint": "KMP uses the failure function to avoid backtracking in the text, achieving O(n+m) time."
+      }
+    ],
+    "visualization": {
+      "type": "dp",
+      "defaultInput": { "str1": "ABABDABACDABABCABAB", "str2": "ABABCABAB" },
+      "inputFormat": "text and pattern separated by a comma",
+      "inputFields": [
+        { "name": "str1", "label": "Text", "placeholder": "e.g. ABABDABACDABABCABAB", "validation": "stringPair" },
+        { "name": "str2", "label": "Pattern", "placeholder": "e.g. ABABCABAB", "validation": "stringPair" }
+      ]
+    }
+  },
+  {
+    "id": "binary-search-tree",
+    "name": "Binary Search Tree",
+    "category": "tree",
+    "difficulty": "Intermediate",
+    "description": "A binary tree data structure where each node has at most two children, and for every node, all values in the left subtree are less and all values in the right subtree are greater. Supports efficient search, insertion, and deletion.",
+    "complexity": {
+      "timeBest": "O(log n)",
+      "timeAverage": "O(log n)",
+      "timeWorst": "O(n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "To insert: compare the value with the current node. Go left if smaller, right if larger.",
+      "Repeat until an empty spot is found, then insert the new node there.",
+      "To search: follow the same comparison logic until the value is found or a null node is reached.",
+      "To delete: handle three cases — leaf node (remove), one child (replace with child), two children (replace with in-order successor).",
+      "The tree maintains the BST property after every operation."
+    ],
+    "paths": {
+      "java": "Java/tree/BinarySearchTree.java",
+      "python": "Python/tree/binary_search_tree.py"
+    },
+    "exercises": [
+      {
+        "id": "bst-ex1",
+        "type": "predict-output",
+        "question": "After inserting [5, 3, 7, 1, 4] into an empty BST, what is the in-order traversal?",
+        "answer": "1, 3, 4, 5, 7",
+        "hint": "In-order traversal of a BST always produces elements in sorted order."
+      },
+      {
+        "id": "bst-ex2",
+        "type": "multiple-choice",
+        "question": "What is the worst-case time complexity of searching in a BST?",
+        "options": ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+        "answer": "O(n)",
+        "hint": "In the worst case (a skewed tree), the BST degenerates into a linked list."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [5, 3, 7, 1, 4, 6, 8],
+      "inputFormat": "comma-separated integers (insertion order)",
+      "inputFields": [
+        { "name": "array", "label": "Values to insert", "placeholder": "e.g. 5, 3, 7, 1, 4", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "binary-tree-traversal",
+    "name": "Binary Tree Traversal",
+    "category": "tree",
+    "difficulty": "Beginner",
+    "description": "Methods for visiting all nodes in a binary tree in a specific order. The three main traversals are in-order (left, root, right), pre-order (root, left, right), and post-order (left, right, root).",
+    "complexity": {
+      "timeBest": "O(n)",
+      "timeAverage": "O(n)",
+      "timeWorst": "O(n)",
+      "space": "O(h)"
+    },
+    "steps": [
+      "In-order: recursively visit left subtree, then the root, then the right subtree.",
+      "Pre-order: visit the root first, then recursively visit left subtree, then right subtree.",
+      "Post-order: recursively visit left subtree, then right subtree, then the root.",
+      "Each traversal visits every node exactly once.",
+      "In-order traversal of a BST produces nodes in sorted order."
+    ],
+    "paths": {
+      "java": "Java/tree/BinaryTreeTraversal.java",
+      "python": "Python/tree/binary_tree_traversal.py"
+    },
+    "exercises": [
+      {
+        "id": "traversal-ex1",
+        "type": "predict-output",
+        "question": "For a BST with in-order [1,2,3,4,5] built by inserting [3,1,4,2,5], what is the pre-order traversal?",
+        "answer": "3, 1, 2, 4, 5",
+        "hint": "Pre-order visits root first: 3, then left subtree (1, then its right child 2), then right subtree (4, then 5)."
+      },
+      {
+        "id": "traversal-ex2",
+        "type": "multiple-choice",
+        "question": "Which traversal visits the root node last?",
+        "options": ["In-order", "Pre-order", "Post-order", "Level-order"],
+        "answer": "Post-order",
+        "hint": "Post-order processes left, right, then root — the root is visited last."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [4, 2, 6, 1, 3, 5, 7],
+      "inputFormat": "comma-separated integers (insertion order)",
+      "inputFields": [
+        { "name": "array", "label": "Values to insert", "placeholder": "e.g. 4, 2, 6, 1, 3, 5, 7", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "min-heap",
+    "name": "Min Heap",
+    "category": "tree",
+    "difficulty": "Intermediate",
+    "description": "A complete binary tree where every parent node is less than or equal to its children. The minimum element is always at the root. Supports efficient insertion and extraction of the minimum element.",
+    "complexity": {
+      "timeBest": "O(1)",
+      "timeAverage": "O(log n)",
+      "timeWorst": "O(log n)",
+      "space": "O(n)"
+    },
+    "steps": [
+      "Insert: add the new element at the end of the array (last position in the tree).",
+      "Bubble up: compare with parent and swap if smaller, repeat until heap property is restored.",
+      "Extract min: remove the root (minimum), replace it with the last element.",
+      "Sift down: compare with children and swap with the smaller child, repeat until heap property is restored.",
+      "The heap is stored as an array where parent of index i is at (i-1)/2, children at 2i+1 and 2i+2."
+    ],
+    "paths": {
+      "java": "Java/tree/MinHeap.java",
+      "python": "Python/tree/min_heap.py"
+    },
+    "exercises": [
+      {
+        "id": "min-heap-ex1",
+        "type": "predict-output",
+        "question": "After inserting [5, 3, 8, 1, 2] into an empty min-heap, what is the root element?",
+        "answer": "1",
+        "hint": "In a min-heap, the smallest element always bubbles up to the root."
+      },
+      {
+        "id": "min-heap-ex2",
+        "type": "fill-blank",
+        "question": "In an array-based heap, the parent of element at index i is at index ____.",
+        "answer": "(i-1)/2",
+        "hint": "For 0-indexed arrays, the parent is at floor((i-1)/2)."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [5, 3, 8, 1, 2, 7, 4],
+      "inputFormat": "comma-separated integers (insertion order)",
+      "inputFields": [
+        { "name": "array", "label": "Values to insert", "placeholder": "e.g. 5, 3, 8, 1, 2", "validation": "integerList" }
+      ]
+    }
+  },
+  {
+    "id": "trie",
+    "name": "Trie (Prefix Tree)",
+    "category": "tree",
+    "difficulty": "Advanced",
+    "description": "A tree-like data structure used for efficient retrieval of keys in a dataset of strings. Each node represents a character, and paths from root to marked nodes represent stored words. Commonly used for autocomplete and spell checking.",
+    "complexity": {
+      "timeBest": "O(m)",
+      "timeAverage": "O(m)",
+      "timeWorst": "O(m)",
+      "space": "O(n × m)"
+    },
+    "steps": [
+      "Start at the root node (empty).",
+      "To insert a word: for each character, check if a child node exists. If not, create one.",
+      "After processing all characters, mark the last node as end-of-word.",
+      "To search: follow the character path from root. If all characters are found and the last is marked, the word exists.",
+      "To find prefixes: follow the path; if it exists, all words with that prefix are in the subtree."
+    ],
+    "paths": {
+      "java": "Java/tree/Trie.java",
+      "python": "Python/tree/trie.py"
+    },
+    "exercises": [
+      {
+        "id": "trie-ex1",
+        "type": "multiple-choice",
+        "question": "What is the time complexity of searching for a word of length m in a Trie?",
+        "options": ["O(1)", "O(log n)", "O(m)", "O(n)"],
+        "answer": "O(m)",
+        "hint": "We traverse exactly m nodes (one per character), regardless of how many words are stored."
+      },
+      {
+        "id": "trie-ex2",
+        "type": "predict-output",
+        "question": "After inserting 'app', 'apple', and 'apt' into a Trie, how many nodes are created (excluding root)?",
+        "answer": "5",
+        "hint": "Shared prefix 'ap' uses 2 nodes. Then 'p' (for app), 'le' (for apple), and 't' (for apt) add 3 more. Total: a, p, p, l/t, e = 5 unique character nodes."
+      }
+    ],
+    "visualization": {
+      "type": "tree",
+      "defaultInput": [1, 2, 3, 4, 5],
+      "inputFormat": "comma-separated integers (character codes)",
+      "inputFields": [
+        { "name": "array", "label": "Values", "placeholder": "e.g. 1, 2, 3, 4, 5", "validation": "integerList" }
+      ]
+    }
+  }
+]

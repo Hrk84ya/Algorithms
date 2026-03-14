@@ -29,13 +29,15 @@ public class PrimAlgorithm {
         }
         
         System.out.println("Minimum Spanning Tree:");
-        while (!pq.isEmpty() && Arrays.stream(inMST).allMatch(x -> x) == false) {
+        int mstCount = 1;
+        while (!pq.isEmpty() && mstCount < vertices) {
             Edge minEdge = pq.poll();
             int v = minEdge.vertex;
             
             if (inMST[v]) continue;
             
             inMST[v] = true;
+            mstCount++;
             totalWeight += minEdge.weight;
             
             // Find which vertex connects to v with minimum weight

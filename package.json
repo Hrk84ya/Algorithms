@@ -1,0 +1,14 @@
+{
+  "name": "interactive-algorithm-learning",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Interactive algorithm learning website — static vanilla HTML/CSS/JS",
+  "scripts": {
+    "test": "vitest --run"
+  },
+  "devDependencies": {
+    "fast-check": "^3.23.2",
+    "jsdom": "^25.0.1",
+    "vitest": "^3.2.1"
+  }
+}
